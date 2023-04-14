@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+
+          public static void main(String[] args) {
+             Scanner sc = new Scanner(source: System.in);
+
+             System.out.println (x: "Digite o nome:");
+             String aluno = sc.nextLine();
+
+             System.out.println (x: "Digite a Idade:");
+             int idade = sc.nextLine();
+
+             System.out.println (x: "Digite o Salario:");
+             double salario = sc.nextLine();
+
+             System.out.println (x: "Digite o peso:");
+             float peso = sc.nextLine();
+
+             System.out.println("Nome" +aluno
+                                               +"\nidade" +idade
+                                               +"\nsalario" +salario
+                                               +"\npeso" +peso);
+          }
+
+}
