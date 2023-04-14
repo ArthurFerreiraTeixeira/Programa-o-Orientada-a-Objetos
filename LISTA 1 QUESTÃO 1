@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class SalarioVendedor {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        
+        // Leitura dos dados
+        System.out.print("Digite o número de carros vendidos: ");
+        int numCarros = entrada.nextInt();
+        
+        System.out.print("Digite o valor total de vendas: ");
+        double valorVendas = entrada.nextDouble();
+        
+        System.out.print("Digite o salário fixo do vendedor: ");
+        double salarioFixo = entrada.nextDouble();
+        
+        System.out.print("Digite o valor que o vendedor recebe por carro vendido: ");
+        double valorPorCarro = entrada.nextDouble();
+        
+        // Cálculo do salário final
+        double salarioFinal = salarioFixo + (valorPorCarro * numCarros) + (0.05 * valorVendas);
+        
+        // Exibição do resultado
+        System.out.println("O salário final do vendedor é: R$ " + salarioFinal);
+        
+        entrada.close();
+    }
+}
