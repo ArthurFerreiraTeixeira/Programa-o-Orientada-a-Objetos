@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class CadastroPessoa {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int totalPessoas = 0;
+        int mulheresEntre18e35ComCC = 0;
+
+        while (true) {
+            // Solicita e valida o sexo
+            System.out.print("Sexo (M/F): ");
+            String sexo = scanner.nextLine().toUpperCase();
+            while (!sexo.equals("M") && !sexo.equals("F")) {
+                System.out.print("Sexo inválido. Digite M para masculino ou F para feminino: ");
+                sexo = scanner.nextLine().toUpperCase();
+            }
+
+            // Solicita e valida a cor dos olhos
+            System.out.print("Cor dos olhos (A/V/C/P): ");
+            String corOlhos = scanner.nextLine().toUpperCase();
+            while (!corOlhos.equals("A") && !corOlhos.equals("V") && !corOlhos.equals("C") && !corOlhos.equals("P")) {
+                System.out.print("Cor dos olhos inválida. Digite A para azul, V para verde, C para castanho ou P para preto: ");
+                corOlhos = scanner.nextLine().toUpperCase();
+            }
+
+            // Solicita e valida a cor dos cabelos
+            System.out.print("Cor dos cabelos (L/C/P/R): ");
+            String corCabelos = scanner.nextLine().toUpperCase();
+            while (!corCabelos.equals("L") && !corCabelos.equals("C") && !corCabelos.equals("P") && !corCabelos.equals("R")) {
+                System.out.print("Cor dos cabelos inválida. Digite L para loiro, C para castanho, P para preto ou R para ruivo: ");
+                corCabelos = scanner.nextLine().toUpperCase();
+            }
+
+            // Solicita e valida a idade
+            System.out.print("Idade (entre 10 e 100 anos ou -1 para encerrar): ");
+            int idade = scanner.nextInt();
+            while ((idade != -1) && (idade < 10 || idade > 100)) {
+                System.out.print("Idade inválida. Digite uma idade entre 10 e 100 anos ou -1 para encerrar: ");
+                idade = scanner.nextInt();
+            }
+
+            // Verifica se o programa deve encerrar
+            if (idade == -1) {
+                break;
+            }
+
+            // Solicita e valida o salário
+            System.out.print("Salário: ");
+            double salario = scanner.nextDouble();
+            while (salario < 0) {
+                System.out.print("Salário inválido. Digite um valor não negativo: ");
+                salario = scanner.nextDouble();
+            }
+
+            scanner.nextLine(); // Limpa o buffer do teclado
+
+            totalPessoas++;
+
+            if (sexo.equals("F") && idade >= 18 && idade <= 35 && corOlhos.equals("C") && corCabelos.equals("C")) {
+                mulheresEntre18e35ComCC++;
+            }
+        }
+
+        System.out.println("Total de pessoas cadastradas: " + totalPessoas);
+        System.out.println("Mulheres entre 18 e 35 anos com cabelos Castanhos e Olhos castanhos: " + mulheresEntre18e35ComCC);
